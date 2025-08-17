@@ -100,7 +100,7 @@ function VehicleManagementPage() {
         <div className="flex flex-col-reverse px-4 mt-5">
           {isLoading ? (
             <div className="grid place-items-center size-full border-b border-[#E5E5E5] pb-12">
-              <CircularProgress size={33} sx={{ color: "#E66801" }} />
+              <CircularProgress size={29} sx={{ color: "#E66801" }} />
             </div>
           ) : (
             <>
@@ -166,7 +166,7 @@ interface AddButtonProps {
 function AddButton({ onClick, disabled, active }: AddButtonProps) {
   return (
     <IconButton
-      className="size-[31px] grid place-items-center rounded-full transition-colors"
+      className="size-[29px] grid place-items-center rounded-full transition-colors"
       onClick={onClick}
       style={{
         backgroundColor: active ? "#BCBCBC" : "#E66801",
@@ -174,7 +174,7 @@ function AddButton({ onClick, disabled, active }: AddButtonProps) {
         pointerEvents: disabled ? "auto" : "none",
       }}
     >
-      <AddSharp className="text-white" style={{ fontSize: 27.5 }} />
+      <AddSharp className="text-white" style={{ fontSize: 24.5 }} />
     </IconButton>
   );
 }
@@ -182,7 +182,7 @@ function AddButton({ onClick, disabled, active }: AddButtonProps) {
 export function BackButton() {
   return (
     <IconButton component={Link} to="/">
-      <KeyboardBackspaceSharp className="text-black" style={{ fontSize: 30 }} />
+      <KeyboardBackspaceSharp className="text-black" style={{ fontSize: 27 }} />
     </IconButton>
   );
 }

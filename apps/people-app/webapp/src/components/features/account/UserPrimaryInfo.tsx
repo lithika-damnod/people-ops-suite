@@ -34,14 +34,14 @@ import { FallbackUserAvatar } from "@/components/shared/Icons";
  */
 function UserPrimaryInfo(props: User) {
   return (
-    <section className="flex justify-between bg-white sticky pt-4 pb-[1.2rem] top-0 z-50">
+    <section className="flex justify-between bg-white sticky pt-4 pb-[0.5rem] top-0 z-50">
       <div>
-        <h1 className="font-semibold text-[1.3rem]">{props.name}</h1>
-        <h2 className="font-medium text-[1.2rem] text-[#707070] leading-[1.5rem]">
+        <h1 className="font-semibold text-xl">{props.name}</h1>
+        <h2 className="font-medium text-lg text-[#707070] leading-[1.5rem]">
           {props.email}
         </h2>
       </div>
-      <div className="w-12 h-12 bg-gray-300 rounded-full relative overflow-hidden">
+      <div className="w-11 h-11 bg-gray-300 rounded-full relative overflow-hidden">
         {props.avatar ? (
           <img
             src={props.avatar}

@@ -121,18 +121,19 @@ function AddVehicleSheet({ onClose, onSubmit }: AddVehicleSheetProps) {
           <IconOption name="MOTORCYCLE">
             <TwoWheelerSharp
               className="text-[#E66801]"
-              style={{ fontSize: 35 }}
+              style={{ fontSize: 32 }}
             />
           </IconOption>
           <IconOption name="CAR">
             <DirectionsCarSharp
               className="text-[#E66801] mb-1"
-              style={{ fontSize: 35 }}
+              style={{ fontSize: 32 }}
             />
           </IconOption>
         </OptionGroup>
-        <div className="mt-8">
+        <div className="mt-7">
           <TextInput
+            className="uppercase placeholder:normal-case"
             label="Vehicle Number"
             placeholder="What's on your license plate?"
             value={number}
@@ -142,7 +143,7 @@ function AddVehicleSheet({ onClose, onSubmit }: AddVehicleSheetProps) {
         </div>
         <div className="relative mt-8">
           <button
-            className="w-full p-[0.46rem] text-[1.2rem] font-semibold rounded-[0.6rem] transition-colors disabled:bg-[#F4F4F4] disabled:text-[#A7A7A7] bg-[#ECECEC] text-[#666666]"
+            className="w-full p-[0.46rem] text-lg font-semibold rounded-[0.6rem] transition-colors disabled:bg-[#F4F4F4] disabled:text-[#A7A7A7] bg-[#ECECEC] text-[#484848]"
             disabled={isValidPlate !== validation.VALID || !type || busy}
             onClick={handleVehicleRegistration}
           >
@@ -155,6 +156,7 @@ function AddVehicleSheet({ onClose, onSubmit }: AddVehicleSheetProps) {
               size={26}
               thickness={5}
               style={{ color: "#4a4a4a" }}
+              className="mb-16"
             />
           </div>
         )}

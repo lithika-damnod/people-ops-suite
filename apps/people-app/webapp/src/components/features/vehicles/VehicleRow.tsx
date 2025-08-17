@@ -72,19 +72,19 @@ function VehicleRow({
   };
 
   return (
-    <div className="font-semibold text-[1.2rem] border-b-[1px] border-[#E5E5E5]">
+    <div className="font-semibold text-lg border-b-[1px] border-[#E5E5E5]">
       <div
         className="grid grid-cols-[0.5fr_1fr_1.6fr_0.7fr] items-center px-1 py-[0.68rem] transition-opacity ease-out relative"
         style={{ opacity: active && !selected ? "50%" : "100%" }}
       >
-        <span className="justify-self-start text-[#A6A6A6] text-[1.22rem]">
+        <span className="justify-self-start text-[#A6A6A6] text-[18.8px]">
           {index ?? ""}
         </span>
         <span className="justify-self-center">
           {type === "MOTORCYCLE" ? (
-            <TwoWheelerSharp className="scale-[1.36] text-[#E66801]" />
+            <TwoWheelerSharp className="scale-[1.32] text-[#E66801]" />
           ) : (
-            <DirectionsCarSharp className="scale-[1.25] text-[#E66801]" />
+            <DirectionsCarSharp className="scale-[1.213] text-[#E66801]" />
           )}
         </span>
         <span className="justify-self-center">{number}</span>
@@ -93,7 +93,7 @@ function VehicleRow({
             className="flex p-1 relative"
             onClick={handleToggleRowOptions}
           >
-            <MoreHorizSharp className="scale-[1.28] text-[#323232]" />
+            <MoreHorizSharp className="scale-[1.17] text-[#323232]" />
           </button>
         </span>
       </div>

@@ -74,31 +74,31 @@ export default function DeleteConfirmationModal({
         onClick={onCancel}
       />
       <motion.div
-        className="will-change-transform w-full px-3 py-2 mx-5 bg-white rounded-xl mb-[150px] relative overflow-hidden"
+        className="will-change-transform w-full px-4 py-3 mx-5 bg-white rounded-xl mb-[150px] relative overflow-hidden"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.25 }}
       >
-        <h2 className="text-[1.2rem] font-semibold">Confirm Delete Vehicle</h2>
-        <p className="text-[1.1rem] font-medium opacity-50">
+        <h2 className="text-lg font-semibold">Confirm Delete Vehicle</h2>
+        <p className="text-base font-medium opacity-50">
           Are you sure you want to permanently delete this vehilce from the
           system?
         </p>
-        <div className="flex flex-col gap-3 mt-6 mb-1 text-[1.2rem]">
+        <div className="flex justify-end gap-3 mt-7 mb-1 text-lg">
           <button
-            className="font-[550] w-full p-[0.35rem] bg-[#E66801] text-white rounded-[0.46rem] transition-colors"
-            onClick={handleConfirm}
-            disabled={isPending}
-          >
-            Confirm
-          </button>
-          <button
-            className="font-[550] w-full p-[0.35rem] bg-[#F5F5F5] text-[#5c5c5c] rounded-[0.46rem] transition-colors"
+            className="font-[550] w-1/3 p-[0.35rem] bg-[#F5F5F5] text-[#5c5c5c] rounded-[0.46rem] transition-colors"
             onClick={onCancel}
             disabled={isPending}
           >
             Cancel
+          </button>
+          <button
+            className="font-[550] w-1/3 p-[0.35rem] bg-[#E66801] text-white rounded-[0.46rem] transition-colors"
+            onClick={handleConfirm}
+            disabled={isPending}
+          >
+            Confirm
           </button>
         </div>
         {isPending && (

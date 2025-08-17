@@ -46,7 +46,7 @@ function IconOption({
 }: IconOptionProps) {
   return (
     <button
-      className="flex justify-center items-center w-[3.3rem] h-[3.3rem] rounded-full bg-[#FDEAE6] overflow-hidden transition-colors"
+      className="flex justify-center items-center w-[3.12rem] h-[3.12rem] rounded-full bg-[#FDEAE6] overflow-hidden transition-colors"
       style={{
         border: selected ? "3px solid #007AFF" : "3px solid transparent",
       }}
