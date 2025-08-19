@@ -15,7 +15,13 @@
 // under the License.
 
 import { AnimatePresence } from "motion/react";
-import { Routes, Route, useLocation, Navigate } from "react-router";
+import {
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+  HashRouter,
+} from "react-router-dom";
 
 import { Home, VehicleManagement } from "@/pages";
 import type { PageProps, User } from "@/types";
@@ -29,7 +35,7 @@ function AnimatedRoutes({ user }: PageProps) {
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home user={user} />} />
+        <Route path="" element={<Home user={user} />} />
         <Route path="/services/vehicles" element={<VehicleManagement />} />
 
         {/* Catch-all route: Redirect unknown routes to home */}
@@ -41,20 +47,26 @@ function AnimatedRoutes({ user }: PageProps) {
 
 function App() {
   const [user, setUser] = useState<User | undefined>(undefined);
-  // getToken((token: string | undefined) => {
-  //   if (token) {
-  //     setUser({
-  //       name: getDisplayNameFromJWT(token) ?? "",
-  //       email: getEmailFromJWT(token) ?? "",
-  //     });
-  //   }
-  // });
-
   useEffect(() => {
-    setUser({ name: "Lithika Dasanayaka", email: "lithika@wso2.com" });
+    const init = () => {
+      getToken((token: string | undefined) => {
+        if (token) {
+          setUser({
+            name: getDisplayNameFromJWT(token) ?? "",
+            email: getEmailFromJWT(token) ?? "",
+          });
+        }
+      });
+    };
+
+    init();
   }, []);
 
-  return <AnimatedRoutes user={user} />;
+  return (
+    <HashRouter>
+      <AnimatedRoutes user={user} />
+    </HashRouter>
+  );
 }
 
 export default App;
