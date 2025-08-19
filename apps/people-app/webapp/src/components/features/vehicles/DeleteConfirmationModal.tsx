@@ -82,7 +82,7 @@ export default function DeleteConfirmationModal({
       >
         <h2 className="text-lg font-semibold">Confirm Delete Vehicle</h2>
         <p className="text-base font-medium opacity-50">
-          Are you sure you want to permanently delete this vehilce from the
+          Are you sure you want to permanently delete this vehicle from the
           system?
         </p>
         <div className="flex justify-end gap-3 mt-7 mb-1 text-lg">
@@ -94,7 +94,7 @@ export default function DeleteConfirmationModal({
             Cancel
           </button>
           <button
-            className="font-[550] w-1/3 p-[0.35rem] bg-[#E66801] text-white rounded-[0.46rem] transition-colors"
+            className="font-[550] w-1/3 p-[0.35rem] bg-primary text-white rounded-[0.46rem] transition-colors"
             onClick={handleConfirm}
             disabled={isPending}
           >

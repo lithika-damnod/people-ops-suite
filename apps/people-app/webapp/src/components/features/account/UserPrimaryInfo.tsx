@@ -15,7 +15,7 @@
 // under the License.
 
 import type { User } from "@/types";
-import { FallbackUserAvatar } from "@/components/shared/Icons";
+import { Avatar } from "@mui/material";
 
 /**
  * UserPrimaryInfo Component
@@ -33,6 +33,12 @@ import { FallbackUserAvatar } from "@/components/shared/Icons";
  * - avatar?: string – optional URL to the user's avatar image
  */
 function UserPrimaryInfo(props: User) {
+  function stringAvatar(name: string) {
+    return {
+      children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+    };
+  }
+
   return (
     <section className="flex justify-between bg-white sticky pt-4 pb-[0.5rem] top-0 z-50">
       <div>
@@ -48,7 +54,12 @@ function UserPrimaryInfo(props: User) {
             className="absolute object-cover w-full h-full"
           />
         ) : (
-          <FallbackUserAvatar width="100%" height="100%" />
+          <Avatar
+            style={{ width: "100%", height: "100%" }}
+            {...stringAvatar("Kent Dodds")}
+          >
+            {`${props?.name?.split(" ")[0][0]}${props?.name?.split(" ")[1][0]}`}
+          </Avatar>
         )}
       </div>
     </section>

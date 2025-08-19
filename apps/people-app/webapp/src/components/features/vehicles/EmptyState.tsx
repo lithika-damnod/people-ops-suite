@@ -34,7 +34,7 @@ function EmptyState() {
       </h1>
       <p className="text-base font-medium text-[#808080]">
         To get started, click the&nbsp;
-        <AddSharp className="text-[#E66801] " style={{ fontSize: 23 }} />
+        <AddSharp className="text-primary" style={{ fontSize: 23 }} />
         &nbsp;icon and add your vehicle details.
       </p>
     </motion.section>

@@ -93,14 +93,14 @@ function VehicleManagementPage() {
 
   return (
     <PageTransitionWrapper type="secondary">
-      <div>
+      <div className="h-screen">
         <section className="px-1 pt-8">
           <BackButton />
         </section>
         <div className="flex flex-col-reverse px-4 mt-5">
           {isLoading ? (
             <div className="grid place-items-center size-full border-b border-[#E5E5E5] pb-12">
-              <CircularProgress size={29} sx={{ color: "#E66801" }} />
+              <CircularProgress size={29} sx={{ color: "#ff7300" }} />
             </div>
           ) : (
             <>
@@ -128,14 +128,14 @@ function VehicleManagementPage() {
             </>
           )}
         </div>
-        <section className="flex justify-end mt-5 pr-1 mx-5">
-          <AddButton
-            active={showBottomSheet}
-            disabled={!selected}
-            onClick={() => setShowBottomSheet(true)}
-          />
-        </section>
       </div>
+      <section className="pr-1 mx-5 fixed bottom-20 right-1.5">
+        <AddButton
+          active={showBottomSheet}
+          disabled={!selected}
+          onClick={() => setShowBottomSheet(true)}
+        />
+      </section>
       <AnimatePresence>
         {showBottomSheet && (
           <AddVehicleSheet
@@ -166,15 +166,15 @@ interface AddButtonProps {
 function AddButton({ onClick, disabled, active }: AddButtonProps) {
   return (
     <IconButton
-      className="size-[29px] grid place-items-center rounded-full transition-colors"
+      className="size-[40px] grid place-items-center rounded-full transition-colors"
       onClick={onClick}
       style={{
-        backgroundColor: active ? "#BCBCBC" : "#E66801",
+        backgroundColor: active ? "#BCBCBC" : "#ff7300",
         opacity: disabled ? "100%" : "50%",
         pointerEvents: disabled ? "auto" : "none",
       }}
     >
-      <AddSharp className="text-white" style={{ fontSize: 24.5 }} />
+      <AddSharp className="text-white" style={{ fontSize: 30.5 }} />
     </IconButton>
   );
 }

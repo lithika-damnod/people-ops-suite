@@ -62,7 +62,7 @@ interface AddVehicleSheetProps {
  */
 function AddVehicleSheet({ onClose, onSubmit }: AddVehicleSheetProps) {
   const [number, setNumber] = useState<string>("");
-  const [type, setType] = useState<"MOTORCYCLE" | "CAR" | undefined>(undefined); // TODO: Replace current type with `Vehicle` type
+  const [type, setType] = useState<"MOTORCYCLE" | "CAR" | undefined>("CAR"); // TODO: Replace current type with `Vehicle` type
   const [isValidPlate, setIsValidPlate] = useState<Validity>(
     validation.UNCERTAIN
   );
@@ -118,17 +118,21 @@ function AddVehicleSheet({ onClose, onSubmit }: AddVehicleSheetProps) {
             setType(value as "CAR" | "MOTORCYCLE" | undefined);
           }}
         >
-          <IconOption name="MOTORCYCLE">
-            <TwoWheelerSharp
-              className="text-[#E66801]"
-              style={{ fontSize: 32 }}
-            />
+          <IconOption name="CAR" selected={true}>
+            {({ selected }) => (
+              <DirectionsCarSharp
+                className={selected ? "text-white" : "text-gray-500"}
+                style={{ fontSize: 32 }}
+              />
+            )}
           </IconOption>
-          <IconOption name="CAR">
-            <DirectionsCarSharp
-              className="text-[#E66801] mb-1"
-              style={{ fontSize: 32 }}
-            />
+          <IconOption name="MOTORCYCLE">
+            {({ selected }) => (
+              <TwoWheelerSharp
+                className={selected ? "text-white" : "text-gray-500"}
+                style={{ fontSize: 32 }}
+              />
+            )}
           </IconOption>
         </OptionGroup>
         <div className="mt-7">
@@ -143,7 +147,7 @@ function AddVehicleSheet({ onClose, onSubmit }: AddVehicleSheetProps) {
         </div>
         <div className="relative mt-8">
           <button
-            className="w-full p-[0.46rem] text-lg font-semibold rounded-[0.6rem] transition-colors disabled:bg-[#F4F4F4] disabled:text-[#A7A7A7] bg-[#ECECEC] text-[#484848]"
+            className="w-full p-[0.46rem] text-lg font-semibold rounded-[0.6rem] transition-colors disabled:bg-[#F4F4F4] disabled:text-[#A7A7A7] bg-primary text-white"
             disabled={isValidPlate !== validation.VALID || !type || busy}
             onClick={handleVehicleRegistration}
           >

@@ -5,6 +5,8 @@
   --text-lg: 18px;
   --text-base: 17px;
   --text-sm: 16px; 
+
+  --color-primary: #ff7300;
 }
 
 :root {
